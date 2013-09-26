@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <p:tabView id="tabView" style="height: 100%;">
+            
+                <p:tab id="tab1" title="Cadastro de Processo Jurídico">
+                    <h:form id="frmCad">
+                        <p:panelGrid columns="4" style="width: 100%; margin: 0; border: none !important;">
+                            <f:facet name="header">
+                                Cadastro de Processo Jurídico
+                            </f:facet>
+
+                            <p:outputLabel value="Nro. do processo:" style="font-weight: bold;"/>
+                            <p:inputText value="" required="true" style="width: 100%"/>
+
+                            <p:outputLabel value="Data de abertura:" style="font-weight: bold;"/>
+                            <p:inputMask mask="dd/MM/yyyy" required="true" style="width: 100%"/>
+
+                            <p:outputLabel value="Tipo de processo:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="">
+                                <f:selectItem itemLabel="Ação Trabalhista" itemValue="0"/>
+                                <f:selectItem itemLabel="Ação Tributária" itemValue="1"/>
+                                <f:selectItem itemLabel="Processo Civil" itemValue="2"/>
+                                <f:selectItem itemLabel="Processo Penal" itemValue="3"/>
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Descrição:" style="font-weight: bold;"/>
+                            <p:inputTextarea rows="10" maxlength="255"  autoResize="false" style="width: 100%"/>
+
+                            <p:outputLabel value="Forum:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="" >  
+                                <f:selectItem itemLabel="Select One" itemValue="" />  
+                                <f:selectItems value="" />  
+                            </p:selectOneMenu> 
+
+                            <p:outputLabel value="Advogado:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="" >  
+                                <f:selectItem itemLabel="Select One" itemValue="" />  
+                                <f:selectItems value="" />  
+                            </p:selectOneMenu> 
+
+                            <p:outputLabel value="Cliente:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="">  
+                                <f:selectItem itemLabel="Select One" itemValue="" />  
+                                <f:selectItems value="" />  
+                            </p:selectOneMenu> 
+
+                            <p:outputLabel value="Situação:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="" >
+                                <f:selectItem itemLabel="Aberto" itemValue="0"/>
+                                <f:selectItem itemLabel="Em julgamento" itemValue="1"/>
+                                <f:selectItem itemLabel="Julgado" itemValue="2"/>
+                                <f:selectItem itemLabel="Cancelado" itemValue="3"/>
+                            </p:selectOneMenu>
+
+                            <f:facet name="footer">
+                                <p:commandButton type="submit" value="Save" icon="ui-icon-check" style="margin:0"/>
+                                <p:commandButton type="reset" value="Limpar" icon="ui-icon-refresh"/>
+                            </f:facet>
+                        </p:panelGrid>
+                    </h:form>
+                </p:tab>
+                
+                <p:tab id="tab2" title="Adicionar tramite">
+                    <h:form id="frmPesquisaTramite">
+                        <p:panelGrid columns="2" style="margin-left: 40%">
+                            <f:facet name="header">
+                                Pesquisar Processo
+                            </f:facet>
+                            
+                            <p:outputLabel value="Nro. do processo:" style="font-weight: bold;"/>
+                            <p:inputText value="" style="width: 100%;"/>
+                            
+                            <f:facet name="footer">
+                                <p:commandButton value="Pesquisar" type="submit" icon="ui-icon-search"/>
+                            </f:facet>
+                        </p:panelGrid>
+                    </h:form>
+                    <br/>
+                    <h:form id="frmAddTramite">
+                        <p:panelGrid columns="4" style="width: 100%; border: none !important;">
+                            <f:facet name="header">
+                                Adicionar Trâmite do Processo
+                            </f:facet>
+
+                            <p:outputLabel value="Nro. do processo:" style="font-weight: bold;"/>
+                            <p:outputLabel value="1010101.1010101.1010"/>
+
+                            <p:outputLabel value="Data de abertura:" style="font-weight: bold;"/>
+                            <p:outputLabel value="12/12/1212"/>
+
+                            <p:outputLabel value="Trâmite:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="" >
+                                <f:selectItem itemLabel="Petição inicial" itemValue="0"/>
+                                <f:selectItem itemLabel="Contestação" itemValue="1"/>
+                                <f:selectItem itemLabel="Impugnação a contestação" itemValue="2"/>
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Observação:" style="font-weight: bold;"/>
+                            <p:inputTextarea rows="5" maxlength="255"  autoResize="false" style="width: 100%"/>
+
+                            <p:outputLabel value="Data do trâmite:" style="font-weight: bold;"/>
+                            <p:inputMask mask="dd/MM/yyyy" required="true" style="width: 100%"/>
+
+                            <p:spacer/>
+                            <p:spacer/>
+
+                            <f:facet name="footer">
+                                <p:commandButton type="submit" value="Save" icon="ui-icon-check" style="margin:0"/>
+                                <p:commandButton type="reset" value="Limpar" icon="ui-icon-refresh"/>
+                            </f:facet>
+                        </p:panelGrid>
+                    </h:form>
+                </p:tab>
+                
+                <p:tab id="tab3" title="Alterar dados do processo">
+                    <h:form id="frmPesquisaProc">
+                        <p:panelGrid columns="2" style="margin-left: 40%">
+                            <f:facet name="header">
+                                Pesquisar Processo
+                            </f:facet>
+                            
+                            <p:outputLabel value="Nro. do processo:" style="font-weight: bold;"/>
+                            <p:inputText value="" style="width: 100%;"/>
+                            
+                            <f:facet name="footer">
+                                <p:commandButton value="Pesquisar" type="submit" icon="ui-icon-search"/>
+                            </f:facet>
+                        </p:panelGrid>
+                    </h:form>
+                    <br/>
+                    
+                    <h:form id="frmAlterar">
+                        <p:panelGrid columns="4" style="width: 100%; margin: 0; border: none !important;">
+                            <f:facet name="header">
+                                Alterar cadastro de Processo Jurídico
+                            </f:facet>
+
+                            <p:outputLabel value="Nro. do processo:" style="font-weight: bold;"/>
+                            <p:inputText value="" required="true" style="width: 100%"/>
+
+                            <p:outputLabel value="Data de abertura:" style="font-weight: bold;"/>
+                            <p:inputMask mask="dd/MM/yyyy" required="true" style="width: 100%"/>
+
+                            <p:outputLabel value="Tipo de processo:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="">
+                                <f:selectItem itemLabel="Ação Trabalhista" itemValue="0"/>
+                                <f:selectItem itemLabel="Ação Tributária" itemValue="1"/>
+                                <f:selectItem itemLabel="Processo Civil" itemValue="2"/>
+                                <f:selectItem itemLabel="Processo Penal" itemValue="3"/>
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Descrição:" style="font-weight: bold;"/>
+                            <p:inputTextarea rows="10" maxlength="255"  autoResize="false" style="width: 100%"/>
+
+                            <p:outputLabel value="Forum:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="" >  
+                                <f:selectItem itemLabel="Select One" itemValue="" />  
+                                <f:selectItems value="" />  
+                            </p:selectOneMenu> 
+
+                            <p:outputLabel value="Advogado:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="" >  
+                                <f:selectItem itemLabel="Select One" itemValue="" />  
+                                <f:selectItems value="" />  
+                            </p:selectOneMenu> 
+
+                            <p:outputLabel value="Cliente:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="">  
+                                <f:selectItem itemLabel="Select One" itemValue="" />  
+                                <f:selectItems value="" />  
+                            </p:selectOneMenu> 
+
+                            <p:outputLabel value="Situação:" style="font-weight: bold;"/>
+                            <p:selectOneMenu value="" >
+                                <f:selectItem itemLabel="Aberto" itemValue="0"/>
+                                <f:selectItem itemLabel="Em julgamento" itemValue="1"/>
+                                <f:selectItem itemLabel="Julgado" itemValue="2"/>
+                                <f:selectItem itemLabel="Cancelado" itemValue="3"/>
+                            </p:selectOneMenu>
+
+                            <f:facet name="footer">
+                                <p:commandButton type="submit" value="Save" icon="ui-icon-check" style="margin:0"/>
+                                <p:commandButton type="reset" value="Limpar" icon="ui-icon-refresh"/>
+                            </f:facet>
+                        </p:panelGrid>
+                    </h:form>
+                </p:tab>
+                
+                <p:tab id="tab4" title="Consultar processo">
+                    <h:form id="frmMerda">
+                        <p:panelGrid columns="2" style="margin-left: 40%">
+                            <f:facet name="header">
+                                Pesquisar Processo
+                            </f:facet>
+                            
+                            <p:outputLabel value="Nro. do processo:" style="font-weight: bold;"/>
+                            <p:inputText value="" style="width: 100%;"/>
+                            
+                            <f:facet name="footer">
+                                <p:commandButton value="Pesquisar" type="submit" icon="ui-icon-search"/>
+                            </f:facet>
+                        </p:panelGrid>
+                    </h:form>
+                    <br/>
+                    
+                    <p:panelGrid columns="4" style="width: 100%; margin: 0; border: none !important;">
+                        <f:facet name="header">
+                            Consulta de dados do processo
+                        </f:facet>
+
+                        <p:outputLabel value="Nro. do processo:" style="font-weight: bold;"/>
+                        <p:outputLabel value="010101010101111" />
+
+                        <p:outputLabel value="Data de abertura:" style="font-weight: bold;"/>
+                        <p:outputLabel value="11/11/1111" />
+
+                        <p:outputLabel value="Tipo de processo:" style="font-weight: bold;"/>
+                        <p:outputLabel value="Penal" />
+
+                        <p:outputLabel value="Descrição:" style="font-weight: bold;"/>
+                        <p:outputLabel value="asjsakjaskjsakjaskjaskjsakj" />
+
+                        <p:outputLabel value="Forum:" style="font-weight: bold;"/>
+                        <p:outputLabel value="Laranja" />
+
+                        <p:outputLabel value="Advogado:" style="font-weight: bold;"/>
+                        <p:outputLabel value="Advogado" />
+
+                        <p:outputLabel value="Cliente:" style="font-weight: bold;"/>
+                        <p:outputLabel value="Cliente" />
+
+                        <p:outputLabel value="Situação:" style="font-weight: bold;"/>
+                        <p:outputLabel value="Aberto" />
+                    </p:panelGrid>
+                    
+                    <h:form>  
+                        <p:dataTable var="" value="">  
+                            <p:column headerText="Trâmite">  
+                                <h:outputText value="" />  
+                            </p:column>  
+
+                            <p:column headerText="Observação">  
+                                <h:outputText value="" />  
+                            </p:column>  
+
+                            <p:column headerText="Data">  
+                                <h:outputText value="" />  
+                            </p:column>  
+                        </p:dataTable>  
+                    </h:form>
+                    
+                </p:tab>
+                
+            </p:tabView>
+
+        </h:body>
+
+    </f:view>
+</html>
+
