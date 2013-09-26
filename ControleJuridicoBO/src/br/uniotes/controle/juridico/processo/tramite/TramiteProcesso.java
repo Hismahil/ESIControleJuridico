@@ -1,15 +1,16 @@
 package br.uniotes.controle.juridico.processo.tramite;
 
 import java.io.Serializable;
-import java.sql.Date;
 
+import br.uniotes.controle.juridico.processo.Processo;
 import br.uniotes.controle.juridico.processo.tramite.tipo.TipoTramite;
 
 public class TramiteProcesso implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	private Processo proc;
 	private String observacoes;
-	private Date dtTramite;
+	private String dtTramite;
 	private TipoTramite tipo;
 	
 	public String getObservacoes() {
@@ -20,11 +21,11 @@ public class TramiteProcesso implements Serializable{
 		this.observacoes = observacoes;
 	}
 	
-	public Date getDtTramite() {
+	public String getDtTramite() {
 		return dtTramite;
 	}
 	
-	public void setDtTramite(Date dtTramite) {
+	public void setDtTramite(String dtTramite) {
 		this.dtTramite = dtTramite;
 	}
 	
@@ -34,6 +35,14 @@ public class TramiteProcesso implements Serializable{
 	
 	public void setTipo(TipoTramite tipo) {
 		this.tipo = tipo;
+	}
+
+	public Processo getProc() {
+		return proc;
+	}
+
+	public void setProc(Processo proc) {
+		this.proc = proc;
 	}
 	
 	

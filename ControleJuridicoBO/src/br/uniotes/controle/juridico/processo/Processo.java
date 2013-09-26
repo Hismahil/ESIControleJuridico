@@ -1,27 +1,24 @@
 package br.uniotes.controle.juridico.processo;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 import br.uniotes.controle.juridico.advogado.Advogado;
 import br.uniotes.controle.juridico.cliente.Cliente;
 import br.uniotes.controle.juridico.forum.Forum;
-import br.uniotes.controle.juridico.processo.situacao.Situacao;
 import br.uniotes.controle.juridico.processo.tipo.TipoProcesso;
-import br.uniotes.controle.juridico.processo.tramite.TramiteProcesso;
 
 public class Processo implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	private Integer codProc;
 	private String nroProcesso;
-	private Date dtAbertura;
+	private String dtAbertura;
 	private String descricao;
 	private Forum forum;
 	private Cliente cliente;
 	private Advogado advogado;
-	private Situacao situacao;
+	private Integer situacao;
 	private TipoProcesso tipo;
-	private TramiteProcesso tramite;
 	
 	public String getNroProcesso() {
 		return nroProcesso;
@@ -31,11 +28,11 @@ public class Processo implements Serializable{
 		this.nroProcesso = nroProcesso;
 	}
 	
-	public Date getDtAbertura() {
+	public String getDtAbertura() {
 		return dtAbertura;
 	}
 	
-	public void setDtAbertura(Date dtAbertura) {
+	public void setDtAbertura(String dtAbertura) {
 		this.dtAbertura = dtAbertura;
 	}
 	
@@ -71,11 +68,11 @@ public class Processo implements Serializable{
 		this.advogado = advogado;
 	}
 
-	public Situacao getSituacao() {
+	public Integer getSituacao() {
 		return situacao;
 	}
 
-	public void setSituacao(Situacao situacao) {
+	public void setSituacao(Integer situacao) {
 		this.situacao = situacao;
 	}
 
@@ -87,13 +84,12 @@ public class Processo implements Serializable{
 		this.tipo = tipo;
 	}
 
-	public TramiteProcesso getTramite() {
-		return tramite;
+	public Integer getCodProc() {
+		return codProc;
 	}
 
-	public void setTramite(TramiteProcesso tramite) {
-		this.tramite = tramite;
+	public void setCodProc(Integer codProc) {
+		this.codProc = codProc;
 	}
-
 	
 }
