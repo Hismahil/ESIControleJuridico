@@ -6,13 +6,13 @@ public class Advogado extends PessoaFisica{
 
 	private static final long serialVersionUID = 1L;
 	private int codAdv;
-	private int nroOAB;
+	private String nroOAB;
 
-	public int getNroOAB() {
+	public String getNroOAB() {
 		return nroOAB;
 	}
 
-	public void setNroOAB(int nroOAB) {
+	public void setNroOAB(String nroOAB) {
 		this.nroOAB = nroOAB;
 	}
 
