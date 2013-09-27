@@ -1,7 +1,7 @@
-package br.unioeste.controle.juridico.db.config;
+package br.unioeste.controle.juridico.common.config;
 
 /**
- * <h3><b>Apenas para ter a configuração do BD</b></h3>
+ * <h3><b>Apenas para ter a configuraï¿½ï¿½o do BD</b></h3>
  * @author Hismahil
  *
  */

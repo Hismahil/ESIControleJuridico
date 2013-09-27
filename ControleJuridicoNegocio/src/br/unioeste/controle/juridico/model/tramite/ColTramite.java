@@ -2,7 +2,7 @@ package br.unioeste.controle.juridico.model.tramite;
 
 import java.sql.ResultSet;
 
-import br.unioeste.controle.juridico.db.connection.DataBaseConnection;
+import br.unioeste.controle.juridico.common.connection.DataBaseConnection;
 import br.unioeste.controle.juridico.model.tipotramite.ColTipoTramite;
 import br.uniotes.controle.juridico.processo.Processo;
 import br.uniotes.controle.juridico.processo.tramite.TramiteProcesso;
@@ -32,7 +32,7 @@ public class ColTramite {
 		return retrieveTramiteProcesso(tramite.getDtTramite());
 	}
 	/**
-	 * <h3><b>Retorna dados de um trâmite e seu tipo</b></h3>
+	 * <h3><b>Retorna dados de um trï¿½mite e seu tipo</b></h3>
 	 * @param dataTramite
 	 * @return
 	 * @throws Exception

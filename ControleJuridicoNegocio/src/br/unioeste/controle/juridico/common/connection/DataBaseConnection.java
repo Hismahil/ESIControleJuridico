@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.unioeste.controle.juridico.db.connection;
+package br.unioeste.controle.juridico.common.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import br.unioeste.controle.juridico.db.config.DataBaseConfiguration;
+import br.unioeste.controle.juridico.common.config.DataBaseConfiguration;
 
 /**
  *
@@ -24,7 +24,7 @@ public class DataBaseConnection {
         
     }
     /**
-     * <h3><b>Seta a conexão</b></h3>
+     * <h3><b>Seta a conexï¿½o</b></h3>
      */
     static{
         try {
@@ -38,7 +38,7 @@ public class DataBaseConnection {
                 System.err.println("Erro ao connectar ao banco de dados: "+ex.getMessage());
             }
         } catch (ClassNotFoundException ex) {
-            System.err.println("Classe Driver do banco de dados não encontrada!");
+            System.err.println("Classe Driver do banco de dados nï¿½o encontrada!");
         }
     }
     /**

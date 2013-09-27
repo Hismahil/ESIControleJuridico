@@ -2,7 +2,7 @@ package br.unioeste.controle.juridico.model.processo;
 
 import java.sql.ResultSet;
 
-import br.unioeste.controle.juridico.db.connection.DataBaseConnection;
+import br.unioeste.controle.juridico.common.connection.DataBaseConnection;
 import br.uniotes.controle.juridico.advogado.Advogado;
 import br.uniotes.controle.juridico.cliente.Cliente;
 import br.uniotes.controle.juridico.forum.Forum;
@@ -12,7 +12,7 @@ import br.uniotes.controle.juridico.processo.tipo.TipoProcesso;
 public class ColProcesso {
 
 	/**
-	 * <h3><b>insere um processo (Falta as validações que o professor pediu)</b></h3>
+	 * <h3><b>insere um processo (Falta as validaï¿½ï¿½es que o professor pediu)</b></h3>
 	 * @param proc
 	 * @return
 	 * @throws Exception
@@ -37,8 +37,8 @@ public class ColProcesso {
 	}
 	
 	/**
-	 * <h3><b>Apenas verifica o código da ultima inserção</b></h3><br/>
-	 * @return <code>Código do ultimo registro</code>
+	 * <h3><b>Apenas verifica o cï¿½digo da ultima inserï¿½ï¿½o</b></h3><br/>
+	 * @return <code>Cï¿½digo do ultimo registro</code>
 	 * @throws Exception 
 	 */
 	private int getLastID() throws Exception{

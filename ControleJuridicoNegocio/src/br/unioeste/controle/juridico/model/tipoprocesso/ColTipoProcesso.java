@@ -2,7 +2,7 @@ package br.unioeste.controle.juridico.model.tipoprocesso;
 
 import java.sql.ResultSet;
 
-import br.unioeste.controle.juridico.db.connection.DataBaseConnection;
+import br.unioeste.controle.juridico.common.connection.DataBaseConnection;
 import br.uniotes.controle.juridico.processo.tipo.TipoProcesso;
 
 public class ColTipoProcesso {
@@ -26,8 +26,8 @@ public class ColTipoProcesso {
 	}
 	
 	/**
-	 * <h3><b>Apenas verifica o código da ultima inserção</b></h3><br/>
-	 * @return <code>Código do ultimo registro</code>
+	 * <h3><b>Apenas verifica o cï¿½digo da ultima inserï¿½ï¿½o</b></h3><br/>
+	 * @return <code>Cï¿½digo do ultimo registro</code>
 	 * @throws Exception 
 	 */
 	private int getLastID() throws Exception{
