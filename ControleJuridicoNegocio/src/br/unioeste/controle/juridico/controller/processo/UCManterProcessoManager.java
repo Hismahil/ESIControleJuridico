@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-package br.unioeste.controle.juridico.control.processo;
+package br.unioeste.controle.juridico.controller.processo;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import br.unioeste.controle.juridico.control.tramite.UCManterTramiteManager;
+import br.unioeste.controle.juridico.controller.tramite.UCManterTramiteManager;
 import br.unioeste.controle.juridico.exception.NoMoreProcess;
 import br.unioeste.controle.juridico.exception.NoUpdateProcess;
 import br.unioeste.controle.juridico.model.processo.ColProcesso;
@@ -73,7 +72,7 @@ public class UCManterProcessoManager {
 					
 					tramite = new TramiteProcesso();
 					tramite.setDtTramite(sdf.format( new Date( System.currentTimeMillis() ) ));
-					tramite.setObservacoes("Lançamento da situação");
+					tramite.setObservacoes("Lanï¿½amento da situaï¿½ï¿½o");
 					
 					TipoTramite tipo = new TipoTramite();
 					tipo.setTipo(getSituacao(newProc.getSituacao()));
@@ -87,16 +86,16 @@ public class UCManterProcessoManager {
 				return colProc.updateProcesso(newProc, oldProc);
 			}
 			else 
-				throw new NoUpdateProcess("Processo não pode ser atualizado", 
-						"O Trâmite do processo não é Abertura");
+				throw new NoUpdateProcess("Processo nï¿½o pode ser atualizado", 
+						"O Trï¿½mite do processo nï¿½o ï¿½ Abertura");
 		}
 		else
-			throw new NoUpdateProcess("Processo não pode ser atualizado", 
-					"Situação do Processo não é de Aberto");
+			throw new NoUpdateProcess("Processo nï¿½o pode ser atualizado", 
+					"Situaï¿½ï¿½o do Processo nï¿½o ï¿½ de Aberto");
 		
 	}
 	/**
-	 * <h3><b>Verifica se o cliente está tentando entrar com o mesmo processo no mesmo mês</b></h3><br/>
+	 * <h3><b>Verifica se o cliente estï¿½ tentando entrar com o mesmo processo no mesmo mï¿½s</b></h3><br/>
 	 * @param proc <code>Processo</code><br/>
 	 * @return <code>true</code> ou <code>false</code>
 	 * @throws Exception
@@ -117,7 +116,7 @@ public class UCManterProcessoManager {
 		return false;
 	}
 	/**
-	 * <h3><b>Verifica se o advogado já possui 3 processo com a siatuação 0 (Aberto)</b></h3><br/>
+	 * <h3><b>Verifica se o advogado jï¿½ possui 3 processo com a siatuaï¿½ï¿½o 0 (Aberto)</b></h3><br/>
 	 * @param proc <code>Processo</code><br/>
 	 * @return <code>true</code> ou <code>false</code>
 	 * @throws Exception
@@ -136,7 +135,7 @@ public class UCManterProcessoManager {
 	}
 	
 	/**
-	 * <h3><b>Cria o trâmite de abertura do processo</b></h3><br/>
+	 * <h3><b>Cria o trï¿½mite de abertura do processo</b></h3><br/>
 	 * @param proc <code>Processo</code>
 	 * @throws Exception
 	 */
@@ -147,7 +146,7 @@ public class UCManterProcessoManager {
 		
 		TramiteProcesso tramite = new TramiteProcesso();
 		tramite.setDtTramite(sdf.format( new Date( System.currentTimeMillis() ) ));
-		tramite.setObservacoes("Criação do processo no escritório");
+		tramite.setObservacoes("Criaï¿½ï¿½o do processo no escritï¿½rio");
 		
 		TipoTramite tipo = new TipoTramite();
 		tipo.setTipo("Abertura");
@@ -168,40 +167,3 @@ public class UCManterProcessoManager {
 		return null;
 	}
 }
-=======
-package br.unioeste.controle.juridico.control.processo;
-
-import java.util.List;
-
-import br.unioeste.controle.juridico.model.processo.ColProcesso;
-import br.uniotes.controle.juridico.processo.Processo;
-
-public class UCManterProcessoManager {
-
-	private ColProcesso colProc = new ColProcesso();
-	
-	public Processo insertProcesso(Processo proc) throws Exception{
-		return colProc.insertProcesso(proc);
-	}
-	
-	public Processo retrieveProcesso(Integer codProc) throws Exception{
-		return colProc.retrieveProcesso(codProc);
-	}
-	
-	public List<Processo> retrieveAllProcesso() throws Exception{
-		return colProc.retrieveAllProcesso();
-	}
-	
-	public List<Processo> retrieveAllProcessoAdvogado(Integer codAdv) throws Exception{
-		return colProc.retrieveAllProcessoAdvogado(codAdv);
-	}
-	
-	public List<Processo> retrieveAllProcessoCliente(Integer codCli) throws Exception{
-		return colProc.retrieveAllProcessoCliente(codCli);
-	}
-	
-	public Processo updateProcesso(Processo newProc,Processo oldProc) throws Exception{
-		return colProc.updateProcesso(newProc, oldProc);
-	}
-}
->>>>>>> master

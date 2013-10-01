@@ -4,15 +4,15 @@ import java.sql.ResultSet;
 
 import br.dados.pessoa.fisica.PessoaFisica;
 import br.dados.pessoa.juridica.PessoaJuridica;
-import br.unioeste.controle.juridico.db.connection.DataBaseConnection;
+import br.unioeste.controle.juridico.common.connection.DataBaseConnection;
 import br.uniotes.controle.juridico.cliente.Cliente;
 
 public class ColCliente {
 
 	/**
-	 * <h3><b>Retorna dados de um cliente - Pessoa Física ou Jurídica</b></h3><br/>
+	 * <h3><b>Retorna dados de um cliente - Pessoa Fï¿½sica ou Jurï¿½dica</b></h3><br/>
 	 * @param nome <code>Nome do cliente</code><br/>
-	 * @return <code>Pessoa Física</code>
+	 * @return <code>Pessoa Fï¿½sica</code>
 	 * @throws Exception 
 	 */
 	public Cliente retrieveClient(Integer codigo) throws Exception{
