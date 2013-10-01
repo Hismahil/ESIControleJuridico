@@ -23,5 +23,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/ControleJuridicoNegocio"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ControleJuridicoBO"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
