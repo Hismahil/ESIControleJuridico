@@ -1,8 +1,10 @@
 package br.unioeste.controle.juridico.model.tramite;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
-import br.unioeste.controle.juridico.common.connection.DataBaseConnection;
+import br.unioeste.controle.juridico.db.connection.DataBaseConnection;
 import br.unioeste.controle.juridico.model.tipotramite.ColTipoTramite;
 import br.uniotes.controle.juridico.processo.Processo;
 import br.uniotes.controle.juridico.processo.tramite.TramiteProcesso;
@@ -27,12 +29,12 @@ public class ColTramite {
 				+ tramite.getObservacoes() + "','"
 				+ tramite.getDtTramite() + "')");
 		
-		DataBaseConnection.getInstance().executeSQL(sql);
+		DataBaseConnection.getInstance().execute(sql);
 		
 		return retrieveTramiteProcesso(tramite.getDtTramite());
 	}
 	/**
-	 * <h3><b>Retorna dados de um trï¿½mite e seu tipo</b></h3>
+	 * <h3><b>Retorna dados de um trâmite e seu tipo</b></h3>
 	 * @param dataTramite
 	 * @return
 	 * @throws Exception
@@ -63,5 +65,49 @@ public class ColTramite {
 		tramite.setTipo(colTipo.retrieveTipoTramite(tipo.getCodTipoTramite()));
 		
 		return tramite;
+	}
+	
+	/**
+	 * <h3><b>Retorna dados de um trâmite e seu tipo</b></h3>
+	 * @param dataTramite
+	 * @return
+	 * @throws Exception
+	 */
+	public List<TramiteProcesso> retrieveAll(Integer codProc) throws Exception{
+		List<TramiteProcesso> lista = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		
+		sql.append("SELECT * FROM tramiteprocesso WHERE codProc = "+ codProc);
+		
+		ResultSet rs = DataBaseConnection.getInstance().executeSQL(sql);
+		
+		TramiteProcesso tramite = null;
+		TipoTramite tipo = null;
+		Processo proc = null;
+		
+		while(rs.next()){
+			tramite = new TramiteProcesso();
+			tipo = new TipoTramite();
+			proc = new Processo();
+			
+			tramite.setDtTramite(rs.getString("dtTramite"));
+			tramite.setObservacoes(rs.getString("observacoes"));
+			
+			proc.setCodProc(rs.getInt("codProc"));
+			tipo.setCodTipoTramite(rs.getInt("codTipoTramite"));
+			tramite.setProc(proc);
+			tramite.setTipo(tipo);
+			
+			lista.add(tramite);
+		}
+		
+		ColTipoTramite colTipo = new ColTipoTramite();
+		
+		for(TramiteProcesso t : lista){
+			t.setTipo(colTipo.retrieveTipoTramite(t.getTipo().getCodTipoTramite()));
+		}
+		
+		return lista;
 	}
 }

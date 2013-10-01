@@ -2,14 +2,14 @@ package br.unioeste.controle.juridico.model.forum;
 
 import java.sql.ResultSet;
 
-import br.unioeste.controle.juridico.common.connection.DataBaseConnection;
+import br.unioeste.controle.juridico.db.connection.DataBaseConnection;
 import br.uniotes.controle.juridico.forum.Forum;
 
 public class ColForum {
 
 	/**
 	 * <h3><b>Retorna dados do Forum</b></h3>
-	 * @param codForum cï¿½digo do forum
+	 * @param codForum código do forum
 	 * @return Forum
 	 * @throws Exception
 	 */

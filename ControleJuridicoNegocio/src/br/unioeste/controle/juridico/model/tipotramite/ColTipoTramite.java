@@ -2,13 +2,13 @@ package br.unioeste.controle.juridico.model.tipotramite;
 
 import java.sql.ResultSet;
 
-import br.unioeste.controle.juridico.common.connection.DataBaseConnection;
+import br.unioeste.controle.juridico.db.connection.DataBaseConnection;
 import br.uniotes.controle.juridico.processo.tramite.tipo.TipoTramite;
 
 public class ColTipoTramite {
 
 	/**
-	 * <h3><b>Insere dados do tipo de trï¿½mite</b></h3>
+	 * <h3><b>Insere dados do tipo de trâmite</b></h3>
 	 * @param tipo
 	 * @return
 	 * @throws Exception
@@ -26,8 +26,8 @@ public class ColTipoTramite {
 	}
 	
 	/**
-	 * <h3><b>Apenas verifica o cï¿½digo da ultima inserï¿½ï¿½o</b></h3><br/>
-	 * @return <code>Cï¿½digo do ultimo registro</code>
+	 * <h3><b>Apenas verifica o código da ultima inserção</b></h3><br/>
+	 * @return <code>Código do ultimo registro</code>
 	 * @throws Exception 
 	 */
 	private int getLastID() throws Exception{
@@ -46,7 +46,7 @@ public class ColTipoTramite {
 		return id;
 	}
 	/**
-	 * <h3><b>Retorna dados do Tipo de trï¿½mite</b></h3>
+	 * <h3><b>Retorna dados do Tipo de trâmite</b></h3>
 	 * @param codTipoTramite
 	 * @return
 	 * @throws Exception
