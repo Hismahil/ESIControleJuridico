@@ -2,11 +2,12 @@ package br.unioeste.controle.juridico.controller.tramite;
 
 import java.util.List;
 
+import br.unioeste.controle.juridico.controller.IUCManterTramiteManager;
 import br.unioeste.controle.juridico.exception.NoPending;
 import br.unioeste.controle.juridico.model.tramite.ColTramite;
 import br.uniotes.controle.juridico.processo.tramite.TramiteProcesso;
 
-public class UCManterTramiteManager {
+public class UCManterTramiteManager implements IUCManterTramiteManager {
 
 	private ColTramite colTramite = new ColTramite();
 	

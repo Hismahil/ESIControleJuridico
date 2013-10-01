@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import br.unioeste.controle.juridico.controller.IUCManterProcessoManager;
 import br.unioeste.controle.juridico.controller.tramite.UCManterTramiteManager;
 import br.unioeste.controle.juridico.exception.NoMoreProcess;
 import br.unioeste.controle.juridico.exception.NoUpdateProcess;
@@ -13,16 +14,14 @@ import br.uniotes.controle.juridico.processo.Processo;
 import br.uniotes.controle.juridico.processo.tramite.TramiteProcesso;
 import br.uniotes.controle.juridico.processo.tramite.tipo.TipoTramite;
 
-public class UCManterProcessoManager {
+public class UCManterProcessoManager implements IUCManterProcessoManager {
 
 	private ColProcesso colProc = new ColProcesso();
 	private SimpleDateFormat sdf;
-	/**
-	 * <h3><b>Insere processo</b></h3><br/>
-	 * @param proc <code>Processo</code><br/>
-	 * @return <code>Processo</code>
-	 * @throws Exception
+	/* (non-Javadoc)
+	 * @see br.unioeste.controle.juridico.controller.processo.IUCManterProcessoManager#insertProcesso(br.uniotes.controle.juridico.processo.Processo)
 	 */
+	@Override
 	public Processo insertProcesso(Processo proc) throws Exception{
 		if(isInvalidate(proc)) 
 			throw new NoMoreProcess("client can not enter the process", "Process equals");
@@ -37,25 +36,49 @@ public class UCManterProcessoManager {
 		return proc; 
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.unioeste.controle.juridico.controller.processo.IUCManterProcessoManager#retrieveProcesso(java.lang.Integer)
+	 */
+	@Override
 	public Processo retrieveProcesso(Integer codProc) throws Exception{
 		return colProc.retrieveProcesso(codProc);
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.unioeste.controle.juridico.controller.processo.IUCManterProcessoManager#retrieveAllProcesso()
+	 */
+	@Override
 	public List<Processo> retrieveAllProcesso() throws Exception{
 		return colProc.retrieveAllProcesso();
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.unioeste.controle.juridico.controller.processo.IUCManterProcessoManager#retrieveProcessoOfNro(java.lang.String)
+	 */
+	@Override
 	public Processo retrieveProcessoOfNro(String nroProcesso) throws Exception{
 		return colProc.retrieveProcessoOfNro(nroProcesso);
 	}
+	/* (non-Javadoc)
+	 * @see br.unioeste.controle.juridico.controller.processo.IUCManterProcessoManager#retrieveAllProcessoAdvogado(java.lang.Integer)
+	 */
+	@Override
 	public List<Processo> retrieveAllProcessoAdvogado(Integer codAdv) throws Exception{
 		return colProc.retrieveAllProcessoAdvogado(codAdv);
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.unioeste.controle.juridico.controller.processo.IUCManterProcessoManager#retrieveAllProcessoCliente(java.lang.Integer)
+	 */
+	@Override
 	public List<Processo> retrieveAllProcessoCliente(Integer codCli) throws Exception{
 		return colProc.retrieveAllProcessoCliente(codCli);
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.unioeste.controle.juridico.controller.processo.IUCManterProcessoManager#updateProcesso(br.uniotes.controle.juridico.processo.Processo, br.uniotes.controle.juridico.processo.Processo)
+	 */
+	@Override
 	public Processo updateProcesso(Processo newProc,Processo oldProc) throws Exception{
 		if(oldProc.getSituacao() == 0){
 			ColTramite colTramite = new ColTramite();
